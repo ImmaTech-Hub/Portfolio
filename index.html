@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JB Final Boss Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+:root{--bg:#0a0a0a;--text:#fff;--accent:#ff7a18;--glass:rgba(255,255,255,0.08)}
+body.light{--bg:#f5f5f5;--text:#111;--accent:#333;--glass:rgba(0,0,0,0.05)}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:var(--bg);color:var(--text);transition:.4s;cursor:none}
+
+/* CURSOR */
+.cursor{width:20px;height:20px;border:2px solid var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:999;transition:.1s}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;position:fixed;width:100%;z-index:1000;background:rgba(0,0,0,0.3);backdrop-filter:blur(10px)}
+.logo{font-weight:700;font-size:26px;color:var(--accent)}
+nav{display:flex;gap:20px}
+nav a{color:var(--text);text-decoration:none}
+.menu{display:none;font-size:28px}
+
+/* TOGGLE */
+.theme-toggle{width:70px;height:34px;border-radius:50px;background:var(--glass);position:relative;cursor:pointer}
+.toggle-circle{width:26px;height:26px;border-radius:50%;position:absolute;top:4px;left:5px;background:var(--accent);display:flex;align-items:center;justify-content:center;transition:.4s}
+.toggle-circle::after{content:'🌙'}
+body.light .toggle-circle{left:38px}
+body.light .toggle-circle::after{content:'☀️'}
+
+.hero{height:100vh;display:flex;align-items:center;justify-content:space-between;padding:0 8%}
+.hero p{font-size: 30px;}
+.hero h1{font-size:60px}
+.hero span{color:var(--accent)}
+.btn{padding:18px 30px;border:none;border-radius:30px;background:var(--accent);color:#fff;margin-top:20px;cursor:pointer}
+.hero-img{width:350px;height:250px;border-radius:20px;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+
+.section{padding:60px 8%}
+.section h2{text-align:center;margin-bottom:20px}
+
+.services,.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{padding:30px;border-radius:20px;background:var(--glass);transition:.4s}
+.card:hover{transform:scale(1.05) rotate(1deg)}
+
+/* PROJECT */
+.project{position:relative;overflow:hidden}
+.project img{width:100%;border-radius:20px}
+.project:hover img{transform:scale(1.1);transition:.4s}
+
+/* CONTACT */
+.contact{max-width:600px;margin:auto;text-align:center}
+.contact input,.contact textarea{width:100%;padding:12px;margin:10px 0;border:none;border-radius:10px;background:var(--glass);color:var(--text)}
+
+/* FLOAT BUTTON */
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:15px;border-radius:50%;font-size:20px;text-decoration:none}
+
+@media(max-width:768px){nav{display:none;position:absolute;top:70px;right:20px;background:var(--bg);flex-direction:column;padding:20px}
+nav.active{display:flex}.menu{display:block}.hero{flex-direction:column;text-align:center}.hero h1{font-size:40px}
+.tech{padding:100px 8%}
+.hero p{font-size: 20px;}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<header>
+<div class="logo">ImmaTech</div>
+<div style="display:flex;gap:10px;align-items:center">
+<div class="theme-toggle" id="toggle"><div class="toggle-circle"></div></div>
+<div class="menu" id="menu">☰</div>
+</div>
+<nav id="nav">
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="tech">
+<h1>Hi, I'm <span>ImmaTech</span></h1>
+<p id="typing"></p>
+<a href="Blessing CV.pdf" download><button class="btn">Download CV</button></a>
+</div>
+<div class="hero-img"><img src="download__1_-removebg-preview.png"></div>
+</section>
+
+<section class="section" id="services">
+<h2>Services</h2>
+<div class="services">
+<div class="card">Web Dev</div>
+<div class="card">UI/UX</div>
+<div class="card">Graphic Designs</div>
+</div>
+</section>
+
+<section class="section" id="projects">
+<h2>Projects</h2>
+<h2>UI/UX</h2>
+<div class="projects">
+    <div class="project"><img src="Metro's Foodgo app UI showcase.png"></div>
+    <div class="project"><img src="ChatGPT Image Mar 26, 2026, 03_31_03 AM.png"></div>
+    <div class="project"><img src="ChatGPT Image Mar 26, 2026, 03_51_43 AM.png"></div>
+    <div class="project"><img src="Gemini_Generated_Image_5zddmm5zddmm5zdd.png"></div>
+</div>
+</section>
+
+<section class="section" id="projects">
+<h2>Graphic Design</h2>
+<div class="projects">
+    <div class="project"><img src="Metro's Foodgo app UI showcase.png"></div>
+    <div class="project"><img src="ChatGPT Image Mar 26, 2026, 03_31_03 AM.png"></div>
+    <div class="project"><img src="ChatGPT Image Mar 26, 2026, 03_57_05 AM.png"></div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2>Contact</h2>
+<div class="contact">
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn" onclick="sendMsg()">Send</button>
+<p>Email: blessingoriaku36@gmail.com</p>
+</div>
+</section>
+
+<a href="https://wa.me/08166429602" class="whatsapp">💬</a>
+
+<script>
+// CURSOR
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{cursor.style.top=e.clientY+'px';cursor.style.left=e.clientX+'px'})
+
+// MENU
+menu.onclick=()=>nav.classList.toggle('active')
+
+// TOGGLE
+toggle.onclick=()=>{document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')}
+if(localStorage.getItem('theme')==='light'){document.body.classList.add('light')}
+
+// TYPING
+const roles=["A Frontend Developer","A Graphic Designer","A UI/UX Designer","A Computer Operator"];
+let i=0,j=0,d=false;
+function type(){let t=roles[i];j=d?j-1:j+1;typing.textContent=t.slice(0,j);if(!d&&j===t.length){d=true;setTimeout(type,1000);return}if(d&&j===0){d=false;i=(i+1)%roles.length}setTimeout(type,d?50:100)}
+type();
+
+// GSAP
+GSAP=gsap;GSAP.registerPlugin(ScrollTrigger);
+gsap.from('.hero h1',{y:100,opacity:0})
+gsap.utils.toArray('.card').forEach(el=>{gsap.from(el,{scrollTrigger:el,y:50,opacity:0})})
+
+// CONTACT ALERT
+function sendMsg(){alert('Message feature needs backend (can add later)')}
+</script>
+</body>
+</html>
